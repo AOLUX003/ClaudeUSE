@@ -1,0 +1,150 @@
+# AI-Human Gap Analysis Project Configuration
+
+project:
+  name: "AI-Human Intuition Gap Documentation"
+  description: "Taxonomy and framework for bridging AI-human communication gaps"
+  domain: "research-documentation"
+
+default_agents:
+  - emilio-memory-agent
+  - emilio-research-agent
+  - technical-writer
+  - diagram-generator
+
+agents:
+  emilio-memory-agent:
+    focus_areas:
+      - Extract patterns from AI interaction experiences
+      - Document "unknown unknowns" awareness frameworks
+      - Track decision-making blind spots
+      - Preserve causality in problem-solving approaches
+
+  emilio-research-agent:
+    focus_areas:
+      - Research cognitive psychology (human intuition formation)
+      - Study AI reasoning patterns and limitations
+      - Gather examples of AI-human miscommunication
+      - Analyze prompt engineering best practices
+
+  technical-writer:
+    focus_areas:
+      - Create taxonomy of gap types
+      - Document frameworks for bridging gaps
+      - Write practical guides for AI interaction
+      - Develop pattern library with examples
+
+workflows:
+  gap_identification:
+    description: "Identify and document new gap patterns"
+    steps:
+      - agent: emilio-memory-agent
+        action: "extract gap pattern from conversation or experience"
+      - agent: emilio-research-agent
+        action: "research similar patterns and existing solutions"
+      - agent: technical-writer
+        action: "document pattern with examples and mitigation strategies"
+
+  framework_development:
+    description: "Create frameworks for gap bridging"
+    steps:
+      - agent: emilio-research-agent
+        action: "research cognitive science and AI reasoning patterns"
+      - agent: technical-writer
+        action: "synthesize into practical framework"
+      - agent: diagram-generator
+        action: "create visual models (flowcharts, matrices)"
+
+context:
+  max_tokens: 8000
+  include_files:
+    - "gap-taxonomy/**/*.md"
+    - "frameworks/**/*.md"
+    - "examples/**/*.md"
+  key_files:
+    - "GAP-TAXONOMY.md"
+    - "BRIDGING-FRAMEWORKS.md"
+    - "PATTERN-LIBRARY.md"
+
+output:
+  format: "research_documentation"
+  use_tables: true  # taxonomy matrices
+  confidence_levels: false  # descriptive, not predictive
+  bold_insights: true  # **key pattern insights**
+  unknown_unknowns_section: true  # meta: gaps in understanding gaps
+  explicit_assumptions: true
+
+metadata:
+  gap_categories:
+    - Context Window Limitations
+    - Implicit vs Explicit Knowledge
+    - Temporal Reasoning Gaps
+    - Causal vs Correlational Thinking
+    - Unknown Unknowns Awareness
+    - Compressed Communication Styles
+    - Documentation Architecture
+    - Phase-Gated Thinking
+
+  research_sources:
+    - Cognitive psychology papers
+    - AI reasoning research
+    - Prompt engineering best practices
+    - Claude/GPT documentation
+    - Personal interaction experiences
+
+  frameworks:
+    - Three-Tier Documentation (metadata → instructions → resources)
+    - Progressive Disclosure Patterns
+    - Compressed Hierarchical Output
+    - Confidence Level Tagging
+    - Assumption Explication Protocol
+
+phases:
+  phase_1:
+    name: "Taxonomy Development"
+    status: "in_progress"
+    deliverables:
+      - Gap type catalog (20+ patterns)
+      - Pattern library with examples
+      - Visual taxonomy map
+
+  phase_2:
+    name: "Framework Creation"
+    status: "planned"
+    deliverables:
+      - Bridging frameworks for each gap type
+      - Practical implementation guides
+      - Tool recommendations
+
+  phase_3:
+    name: "Community Validation"
+    status: "planned"
+    deliverables:
+      - Share taxonomy publicly
+      - Gather feedback and examples
+      - Refine based on community input
+
+notes: |
+  **Core Insight:** Humans move fast, think compressed/associative, struggle to break down
+  chain of thought for AI instruction. AI needs explicit, structured, progressive disclosure.
+
+  **Key Gaps Identified:**
+  1. **Context Window Management**: Humans assume AI remembers everything; AI has token limits
+  2. **Implicit Knowledge**: Humans assume shared context; AI needs explicit instructions
+  3. **Unknown Unknowns**: Humans identify blind spots naturally; AI needs prompting
+  4. **Compressed Communication**: Humans shorthand; AI benefits from structure
+  5. **Documentation Obesity**: Humans create bloated docs; AI prefers tiered disclosure
+
+  **Bridging Patterns:**
+  - Three-tier architecture: Always-loaded → Context-activated → On-demand
+  - Confidence tagging: High/Medium/Low on all recommendations
+  - Explicit assumptions: Separate "known" from "assumed"
+  - Unknown unknowns section: ALWAYS include potential blind spots
+  - Bold key insights: **Highlight for scanning**
+
+  **Real-World Examples:**
+  - .cursorrules consolidation: 5,869 lines → 3-file system (60% reduction)
+  - Memory extraction: 70% length reduction, 100% strategic value retention
+  - Project configs: One file per project vs scattered context
+
+last_updated: "2025-10-22"
+version: "1.0"

@@ -1,0 +1,202 @@
+# ICIP Project Configuration
+
+project:
+  name: "ICIP (IoT Cost Intelligence Platform)"
+  description: "IoT connectivity cost forecasting and optimization platform"
+  domain: "fullstack-saas"
+  repository: "https://github.com/user/icip" # update with actual
+
+default_agents:
+  - backend-architect
+  - database-architect
+  - frontend-developer
+  - react-expert
+  - python-pro
+  - fastapi-pro
+  - test-automator
+  - emilio-strategy-agent
+  - emilio-research-agent
+  - emilio-sales-agent
+
+agents:
+  database-architect:
+    constraints:
+      - Must use PostgreSQL (not MongoDB)
+      - JSONB columns for flexible pricing data
+      - Client-side calculation + server validation hybrid
+      - Scenario versioning for iteration support
+      - Must handle 10K+ concurrent users at scale
+
+    focus_areas:
+      - Purchase schedule vs activation schedule separation (core competitive advantage)
+      - Manual override support (SIMs, activations, devices)
+      - Timeline badge system (pre-contract, during, post-contract)
+      - Flexible pricing models without schema migrations
+
+  backend-architect:
+    focus_areas:
+      - RESTful API design for forecasting engine
+      - JSONB for flexible pricing data (different carriers, models)
+      - Manual override architecture
+      - CSV export functionality
+      - Scenario CRUD operations
+
+    preferred_technologies:
+      - FastAPI with async patterns
+      - PostgreSQL + Drizzle ORM (or Prisma)
+      - Redis for caching
+      - Pydantic for validation
+
+  react-expert:
+    focus_areas:
+      - Client-side calculation engine (instant recalc)
+      - Scenario builder UI with add-row capability
+      - Purchase schedule table with date pickers
+      - Forecast table auto-generated with dynamic columns
+      - Timeline badges (color-coded contract phases)
+      - Manual override UI (inline editing)
+
+  emilio-strategy-agent:
+    additional_instructions: |
+      **Strategic Context:**
+      - Crawl: Internal Soracom tool (complete)
+      - Walk: Multi-carrier platform (in progress)
+      - Run: Full ICIP with marketplace, benchmarking, AI
+
+      **Monopoly Path:**
+      1. Soracom customer forecasting (100% market share)
+      2. MVNO comparison platforms (smaller, winnable)
+      3. IoT connectivity intelligence layer (big vision)
+
+      **Core Moat:** Purchase ≠ activation separation - only solution accurate from Day 1
+
+workflows:
+  feature_development:
+    description: "Standard feature development workflow"
+    steps:
+      - agent: database-architect
+        action: "design schema changes (if needed)"
+      - agent: backend-architect
+        action: "implement API endpoints"
+      - agent: react-expert
+        action: "build UI components with client-side calc"
+      - agent: test-automator
+        action: "generate integration tests"
+      - agent: security-auditor
+        action: "security review before deployment"
+
+  competitive_positioning:
+    description: "Sales enablement and positioning"
+    steps:
+      - agent: emilio-research-agent
+        action: "competitive analysis and market research"
+      - agent: emilio-sales-agent
+        action: "create battlecards and value propositions"
+      - agent: emilio-strategy-agent
+        action: "refine go-to-market strategy"
+
+context:
+  max_tokens: 8000
+  include_files:
+    - "src/components/**/*.tsx"
+    - "src/api/**/*.ts"
+    - "prisma/schema.prisma"
+    - "src/lib/**/*.ts"
+  key_files:
+    - "README.md"
+    - "VISION.md"
+    - "ROADMAP.md"
+    - "CHANGELOG.md"
+
+output:
+  format: "structured_with_tables"
+  use_tables: true
+  confidence_levels: true
+  bold_insights: true
+  unknown_unknowns_section: true
+  explicit_assumptions: true
+  alternatives_section: true  # Show rejected alternatives (important for documenting decisions)
+
+metadata:
+  tech_stack:
+    backend: "FastAPI (async Python)"
+    frontend: "React + TypeScript"
+    database: "PostgreSQL/Neon with JSONB"
+    orm: "Drizzle or Prisma"
+    deployment: "Replit → Vercel (future)"
+
+  constraints:
+    budget_phase_1: "$25 (complete)"
+    budget_phase_2: "$5 (complete)"
+    budget_phase_3: "$20 (in progress)"
+    total_budget: "$75 MVP"
+    timeline: "Phase 3 → 2 weeks"
+    team_size: 1 (solo founder, no technical co-founder yet)
+
+  success_metrics:
+    phase_1: "Basic forecasting working"
+    phase_2: "Manual overrides + timeline badges + device tracking"
+    phase_3: "UI polish + accessibility + export"
+    phase_validation: "500 Soracom users before external launch"
+
+phases:
+  phase_1:
+    name: "Core Forecasting Engine"
+    status: "complete"
+    deliverables:
+      - Scenario-agnostic calculation engine
+      - Month generation loop
+      - Cumulative SIM fleet tracking
+      - YTD cost resets
+      - Monthly spend formulas
+
+  phase_2:
+    name: "Advanced Features"
+    status: "complete"
+    deliverables:
+      - Manual overrides (SIMs, activations, devices)
+      - Timeline badges (pre/during/post contract)
+      - Device tracking (5 yellow rows: YTD deployment, YTD spend, cumulative spend)
+      - Total row with "(SIM + MRC + HW)" labels
+      - Auto-recalculation on input changes
+
+  phase_3:
+    name: "UI Polish & Export"
+    status: "in_progress"
+    deliverables:
+      - Improved styling (horizontal scroll, fixed widths, alternating rows)
+      - WCAG 2.2 AA compliance (semantic HTML, ARIA labels, 4.5:1 contrast)
+      - CSV export functionality
+      - Chart visualizations
+      - Database persistence
+
+notes: |
+  **Core Competitive Advantage:** Purchase ≠ activation separation.
+  All competitors assume SIMs purchased = activated, making forecasts wrong from Day 1.
+
+  **Recent Critical Work (Oct 16):** Fixed manual override array indexing bug
+  (UI absolute index vs calculator forecast index mismatch) - demonstrates
+  architectural-level complexity beyond simple MVP.
+
+  **Strategic Safeguards:**
+  - IP ownership: Emilio owns platform, Soracom gets license
+  - Revenue share: 70/30 split
+  - Term: 3 years with buyout formula
+  - Spin-out triggers: [To be defined]
+
+  **Peter Thiel's 7 Questions Assessment:**
+  1. Engineering: YES (purchase≠activation revolutionary)
+  2. Timing: YES (30B devices by 2030, cost pressure, AI maturity)
+  3. Monopoly: NEEDS WORK (start Soracom-only, expand to MVNO comparison)
+  4. People: CURRENTLY NO (need technical co-founder)
+  5. Durability: RISK (forecasting defensible, marketplace commoditized without network effects)
+  6. Distribution: YES for Soracom, WEAK for standalone
+  7. Secret: PARTIALLY (purchase/activation unique but not completely hidden)
+
+  **Next Steps:**
+  - Find technical co-founder before external launch
+  - Build network effects into Phase 1-2 (user data improves models)
+  - Launch internally at Soracom first (get 500 users)
+
+last_updated: "2025-10-22"
+version: "1.0"

@@ -1,0 +1,125 @@
+# Project Configuration Template
+
+project:
+  name: "Project Name"
+  description: "Brief project description"
+  domain: "backend|frontend|fullstack|data|infrastructure|ai"
+  repository: "https://github.com/user/repo" # optional
+
+# Default agents loaded for this project context
+default_agents:
+  - agent-name-1
+  - agent-name-2
+  - agent-name-3
+
+# Agent behavior overrides (project-specific instructions)
+agents:
+  agent-name:
+    additional_instructions: |
+      Project-specific guidance for this agent.
+      Multi-line instructions supported.
+
+    constraints:
+      - Constraint 1
+      - Constraint 2
+
+    preferred_technologies:
+      - Technology A
+      - Technology B
+
+    focus_areas:
+      - Focus area 1
+      - Focus area 2
+
+# Project-specific workflows
+workflows:
+  workflow-name:
+    description: "What this workflow does"
+    steps:
+      - agent: agent-name-1
+        action: "what agent does"
+        output: "expected deliverable"
+
+      - agent: agent-name-2
+        action: "what agent does"
+        dependencies: ["agent-name-1"]
+
+# Context preferences for this project
+context:
+  max_tokens: 8000  # Context window budget
+  include_files:
+    - "src/**/*.py"
+    - "tests/**/*.py"
+  exclude_patterns:
+    - "*/migrations/*"
+    - "*/venv/*"
+    - "*/node_modules/*"
+  key_files:  # Always include these
+    - "README.md"
+    - "ARCHITECTURE.md"
+
+# Output preferences (applied to all agents in this project)
+output:
+  format: "structured|compressed_hierarchical|tables"
+  use_tables: true
+  confidence_levels: true
+  bold_insights: true
+  unknown_unknowns_section: true
+  explicit_assumptions: true
+  alternatives_section: false  # show rejected alternatives
+
+# Project-specific metadata
+metadata:
+  tech_stack:
+    backend: "FastAPI|Django|Express|Spring"
+    frontend: "React|Vue|Angular|Next.js"
+    database: "PostgreSQL|MongoDB|MySQL"
+    infrastructure: "AWS|Azure|GCP|Heroku"
+
+  constraints:
+    budget: "$X/month"
+    timeline: "X weeks"
+    team_size: X
+
+  success_metrics:
+    - Metric 1
+    - Metric 2
+
+# Integration with external tools (optional)
+integrations:
+  github:
+    repo: "user/repo"
+    branch: "main"
+
+  monitoring:
+    tool: "DataDog|New Relic|Grafana"
+    dashboards: ["url1", "url2"]
+
+  documentation:
+    notion: "https://notion.so/workspace/page"
+    confluence: "https://confluence.company.com/space"
+
+# Project phases (for phase-gated development)
+phases:
+  phase_0:
+    name: "Discovery"
+    status: "complete|in_progress|planned"
+    deliverables:
+      - Deliverable 1
+      - Deliverable 2
+
+  phase_1:
+    name: "MVP"
+    status: "complete|in_progress|planned"
+    deliverables:
+      - Deliverable 1
+      - Deliverable 2
+
+# Notes and context
+notes: |
+  Additional project context, recent decisions,
+  or important considerations that agents should know.
+
+# Last updated
+last_updated: "2025-10-22"
+version: "1.0"

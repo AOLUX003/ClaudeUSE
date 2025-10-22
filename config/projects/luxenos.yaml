@@ -1,0 +1,160 @@
+# LuxenOS Project Configuration
+
+project:
+  name: "LuxenOS"
+  description: "Personal AI memory and orchestration system with sovereign data principles"
+  domain: "ai-infrastructure"
+  repository: "" # local development
+
+default_agents:
+  - llm-application-architect
+  - python-pro
+  - rag-specialist
+  - agent-orchestrator
+  - emilio-memory-agent
+  - emilio-architecture-agent
+  - database-architect
+
+agents:
+  llm-application-architect:
+    focus_areas:
+      - Sovereign memory architecture
+      - Multi-agent orchestration
+      - RAG with vector databases (Pinecone, Weaviate, ChromaDB)
+      - Append-only logging patterns
+      - Progressive disclosure (3-tier: metadata → instructions → resources)
+
+    preferred_technologies:
+      - LangChain or LlamaIndex for RAG
+      - OpenAI API + Claude API (multi-provider consensus)
+      - Vector DB: Pinecone/Weaviate/ChromaDB
+      - Graph DB: Neo4j for causal relationships
+      - Firebase for structured data
+
+  python-pro:
+    preferred_patterns:
+      - async/await for all I/O operations
+      - Pydantic for data validation
+      - FastAPI for APIs
+      - pytest for testing
+      - Type hints throughout
+
+  rag-specialist:
+    focus_areas:
+      - Semantic search with vector embeddings
+      - Chunk size optimization (experimental)
+      - Hybrid search (semantic + keyword)
+      - Re-ranking strategies
+      - Retrieval evaluation metrics
+
+  emilio-memory-agent:
+    additional_instructions: |
+      Focus on LuxenOS-specific memory patterns:
+      - Append-only logging (preserve evolution)
+      - Two-tier memory (compressed + full extractions)
+      - Causal decision chains (how ideas evolved)
+      - Agent-specific ingestion strategies
+      - Temporal decay considerations
+
+workflows:
+  memory_integration:
+    description: "Design and implement memory subsystem"
+    steps:
+      - agent: rag-specialist
+        action: "design vector database schema and retrieval strategy"
+      - agent: python-pro
+        action: "implement embedding pipeline with async patterns"
+      - agent: llm-application-architect
+        action: "design retrieval strategy and context management"
+      - agent: test-automator
+        action: "generate tests for memory retrieval accuracy"
+
+  agent_orchestration:
+    description: "Design multi-agent coordination system"
+    steps:
+      - agent: agent-orchestrator
+        action: "design agent workflow patterns"
+      - agent: llm-application-architect
+        action: "implement agent coordination logic"
+      - agent: python-pro
+        action: "build agent execution framework"
+
+context:
+  max_tokens: 8000
+  include_files:
+    - "agents/**/*.py"
+    - "memory/**/*.py"
+    - "orchestration/**/*.py"
+  exclude_patterns:
+    - "*/__pycache__/*"
+    - "*/venv/*"
+    - "*.pyc"
+  key_files:
+    - "README.md"
+    - "ARCHITECTURE.md"
+    - ".cursorrules"
+    - "CURRENT.md"
+    - "ROADMAP.md"
+    - "DECISIONS.md"
+
+output:
+  format: "compressed_hierarchical"
+  use_tables: true
+  confidence_levels: true
+  bold_insights: true
+  unknown_unknowns_section: true
+  explicit_assumptions: true
+  alternatives_section: true
+
+metadata:
+  tech_stack:
+    backend: "FastAPI (async)"
+    database: "Firebase + Pinecone/Weaviate + ChromaDB (local cache)"
+    llm_providers: "OpenAI + Claude (multi-provider consensus)"
+    orchestration: "Custom Python framework"
+
+  constraints:
+    budget: "API costs ~$50/month"
+    timeline: "Phase 6.5 MVP - 4 weeks"
+    team_size: 1 (solo founder)
+
+  success_metrics:
+    - ChatGPT-4o parity in conversational quality
+    - Persistent memory across sessions (append-only JSON)
+    - Multi-provider consensus working
+    - Used daily instead of ChatGPT/Claude
+
+phases:
+  phase_6_5:
+    name: "MVP - Conversational Quality"
+    status: "in_progress"
+    deliverables:
+      - API keys working (OpenAI + Claude)
+      - Match GPT-4o conversational quality
+      - Persistent memory (append-only JSON)
+      - Multi-provider consensus (query 2-3 APIs)
+      - Ship to 10 users for feedback
+
+  phase_7:
+    name: "Memory Architecture"
+    status: "planned"
+    deliverables:
+      - Vector database integration (Pinecone/Weaviate)
+      - RAG implementation for memory retrieval
+      - Agent-specific knowledge stores
+      - Temporal indexing and decay
+
+notes: |
+  **Sovereignty Paradox:** More control → less usable. More autonomous → less trustworthy.
+
+  **Key Insight:** Build like progressive web app, not desktop OS. Start with simple
+  capabilities that work perfectly, progressively enhance based on user behavior.
+
+  **Memory Philosophy:** Append-only with timestamps. No conflict resolution needed for MVP.
+  Hierarchical: Hot (current), Warm (recent), Cold (historical).
+
+  **Architecture Pattern:** JARVIS pattern - distributed agents with domain-specific
+  knowledge stores, not monolithic RAG.
+
+last_updated: "2025-10-22"
+version: "1.0"

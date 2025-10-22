@@ -1,0 +1,160 @@
+# Sales Enablement Project Configuration
+
+project:
+  name: "Sales Enablement Content"
+  description: "B2B sales collateral, competitive positioning, and value proposition development"
+  domain: "business-content"
+
+default_agents:
+  - emilio-sales-agent
+  - emilio-research-agent
+  - emilio-strategy-agent
+  - technical-writer
+  - seo-writer
+  - business-analyst
+
+agents:
+  emilio-sales-agent:
+    focus_areas:
+      - Value proposition development (pain-agitate-solve)
+      - ROI calculators with confidence levels
+      - Competitive battlecards
+      - Demo scripts (customer-centric)
+      - Email sequences
+      - Objection handling
+      - Case study creation
+
+  emilio-research-agent:
+    focus_areas:
+      - Competitive intelligence gathering
+      - Customer pain research with evidence
+      - Market sizing (TAM/SAM/SOM)
+      - Pricing research and benchmarking
+      - Proof point collection (case studies, metrics)
+
+  emilio-strategy-agent:
+    focus_areas:
+      - Go-to-market strategy
+      - Market positioning (monopoly path)
+      - Pricing & packaging strategy
+      - Distribution channel selection
+      - Customer acquisition strategy
+
+workflows:
+  battlecard_creation:
+    description: "Competitive battlecard development"
+    steps:
+      - agent: emilio-research-agent
+        action: "competitive intelligence gathering and analysis"
+      - agent: emilio-sales-agent
+        action: "create battlecard with win themes and objection handling"
+
+  value_prop_development:
+    description: "Value proposition and messaging"
+    steps:
+      - agent: emilio-research-agent
+        action: "customer pain research and quantification"
+      - agent: emilio-sales-agent
+        action: "develop value proposition with ROI calculator"
+      - agent: emilio-strategy-agent
+        action: "position against alternatives"
+
+  sales_collateral:
+    description: "One-pagers, case studies, demo scripts"
+    steps:
+      - agent: emilio-research-agent
+        action: "gather proof points and customer evidence"
+      - agent: emilio-sales-agent
+        action: "create sales collateral (one-pager, case study, or demo script)"
+      - agent: technical-writer
+        action: "polish and format for distribution"
+
+context:
+  max_tokens: 8000
+  include_files:
+    - "sales/**/*.md"
+    - "content/**/*.md"
+  key_files:
+    - "value-propositions.md"
+    - "competitive-battlecards.md"
+    - "roi-calculators.md"
+
+output:
+  format: "sales_optimized"
+  use_tables: true  # comparison matrices
+  confidence_levels: true  # on ROI projections
+  bold_insights: true  # **value propositions highlighted**
+  unknown_unknowns_section: true  # sales strategy blind spots
+  explicit_assumptions: true  # "assumes 100 devices, 20% optimization"
+
+metadata:
+  primary_products:
+    - ICIP
+    - LuxenOS
+    - Custom consulting
+
+  target_audiences:
+    icip:
+      - IoT Product Managers (technical buyers)
+      - IoT Directors/VPs (executives)
+      - Procurement teams (cost-focused)
+
+    luxenos:
+      - AI researchers (technical)
+      - Productivity enthusiasts (prosumers)
+      - Enterprise AI teams (business)
+
+  sales_methodologies:
+    - SPIN Selling (situation, problem, implication, need-payoff)
+    - Challenger Sale (teach, tailor, take control)
+    - MEDDIC (metrics, economic buyer, decision criteria, decision process, identify pain, champion)
+
+  content_types:
+    - One-pagers
+    - Battlecards
+    - ROI calculators
+    - Demo scripts
+    - Email sequences
+    - Case studies
+    - Whitepapers
+    - Blog posts (SEO-optimized)
+
+phases:
+  phase_1:
+    name: "Foundation"
+    status: "in_progress"
+    deliverables:
+      - ICIP value proposition
+      - ICIP ROI calculator
+      - Competitive battlecards (ICIP vs manual spreadsheets, vs competitors)
+
+  phase_2:
+    name: "Scale"
+    status: "planned"
+    deliverables:
+      - Case studies (3-5 customers)
+      - Demo script library
+      - Email sequence templates
+      - Objection handling playbook
+
+notes: |
+  **Sales Philosophy:**
+  - Sell outcomes, not features
+  - Lead with customer pain, follow with quantified value
+  - ROI calculators concrete and credible (confidence levels)
+  - Competitive positioning through differentiation, not feature checklists
+
+  **ICIP Example ROI:**
+  Customer with 10K devices spending $20K/month connectivity.
+  - Current state: $240K/year + $20K labor for manual comparison = $260K
+  - With ICIP: Optimized to $192K/year (20% savings) + $2K labor = $194K
+  - Net savings: $66K/year
+  - ROI: 13,200% on $500/month ICIP subscription
+  - Confidence: Medium (assumes 20% optimization, varies per customer)
+
+  **Key Differentiators:**
+  - ICIP: Purchase ≠ activation separation (only solution accurate from Day 1)
+  - LuxenOS: Sovereign memory with causal reasoning (not just RAG retrieval)
+
+last_updated: "2025-10-22"
+version: "1.0"

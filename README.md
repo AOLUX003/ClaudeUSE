@@ -3,8 +3,12 @@
 > **⚡ Updated for Sonnet 4.5 & Haiku 4.5** — All agents optimized for latest models with hybrid orchestration
 >
 > **🎯 Agent Skills Enabled** — 47 specialized skills extend Claude's capabilities across plugins with progressive disclosure
+>
+> **✨ Custom Extensions by Emilio** — 5 personal agents, 3 workflows, 4 project configs, and comprehensive organizational docs
 
 A comprehensive production-ready system combining **85 specialized AI agents**, **15 multi-agent workflow orchestrators**, **47 agent skills**, and **44 development tools** organized into **63 focused, single-purpose plugins** for [Claude Code](https://docs.claude.com/en/docs/claude-code/overview).
+
+**Plus** personal extensions with 5 custom agents (memory, research, strategy, sales, architecture), 3 multi-agent workflows, and 4 project-specific configurations.
 
 ## Overview
 
