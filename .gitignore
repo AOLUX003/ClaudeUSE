@@ -22,3 +22,34 @@ venv
 node_modules
 .sass-cache
 .claude
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+*.env
+.env.*
+
+# API keys and credentials
+credentials.json
+secrets.json
+config/secrets/
+*.key
+*.pem
+*_rsa
+*_rsa.pub
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and editor secrets
+.vscode/settings.json
+.idea/
+
+# Cloud provider credentials
+.aws/
+.azure/
+.gcloud/
