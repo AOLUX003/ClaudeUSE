@@ -22,6 +22,7 @@ venv
 node_modules
 .sass-cache
 .claude
+
 # Environment variables and secrets
 .env
 .env.local
@@ -30,6 +31,24 @@ node_modules
 .env.test
 *.env
 .env.*
+
+# MCP and Claude configurations (CRITICAL - DO NOT COMMIT)
+mcp.json
+.mcp.json
+mcp_server_config.json
+claude_desktop_config.json
+claude.json
+claude_config.json
+
+# Backup files that might contain secrets
+*.bak
+*.old
+*.tmp
+*_backup.*
+*.backup
+*.swp
+*.swo
+*~
 
 # API keys and credentials
 credentials.json
